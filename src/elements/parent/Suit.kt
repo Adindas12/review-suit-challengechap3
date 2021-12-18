@@ -1,5 +1,8 @@
+package elements.parent
 
-open class Suit (var name: String = "") {
+import ResultSuit
+
+open class  Suit (var name: String = "") {
     open fun loseTo(): String {
         return ""
     }

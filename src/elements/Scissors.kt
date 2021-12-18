@@ -1,6 +1,7 @@
 package elements
 
-import Suit
+import elements.parent.Suit
+import helper.StringContainer
 
 class Scissors(name: String) : Suit(name) {
 

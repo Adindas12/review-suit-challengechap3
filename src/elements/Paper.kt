@@ -1,7 +1,7 @@
 package elements
 
-import ResultSuit
-import Suit
+import elements.parent.Suit
+import helper.StringContainer
 
 class Paper(name: String) : Suit(name) {
 

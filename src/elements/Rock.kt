@@ -1,7 +1,7 @@
 package elements
 
-import Suit
-import StringContainer
+import elements.parent.Suit
+import helper.StringContainer
 
 class Rock(name: String) : Suit(name) {
 
