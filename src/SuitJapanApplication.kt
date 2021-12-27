@@ -3,6 +3,7 @@ import elements.Rock
 import elements.Scissors
 import elements.parent.Suit
 import helper.StringContainer
+import javax.print.attribute.standard.PrinterInfo
 
 fun main(args: Array<String>) {
     startSuitWithCom()
@@ -16,35 +17,32 @@ private fun startSuitWithCom() {
     val resultList: List<Suit> = listOf(paper, rock, scissors)
     val compSuit = resultList.random()
 
-    println("computer milih -> ${compSuit.name}")
-    println("input suit (kertas, gunting, batu)")
+    println("-----------GAME SUIT JEPANG-----------")
+    println("------------Selamat Bermain-----------")
+    println("Silahkan pilih (kertas, gunting, batu)")
     val input = readLine()
 
-    // TODO: "solved this line  (use do-while)"
-    /**
-     * loop ketika user input selain kertas, gunting, batu
-     * User input selain kertas, gunting, batu -> fungsi readline s/d success -> di loop (mengulang)
-     * Meminta user menginput kembali
-     */
     do {
-//        val mySuit = when (input) {
-//            "gunting" -> Scissors(StringContainer.scissors)
-//            "batu" -> Rock(StringContainer.rock)
-//           else -> Paper(StringContainer.paper)
-//        }
-//
-//        val result = mySuit.actionAgainst(compSuit)
-//        println("you is ${result.status} | you: ${mySuit.name} vs comp: ${compSuit.name}")
-//
-//        println("main lagi? (ketik yes jika ingin)")
-//        val yes = readLine()
-//        if (yes == "yes") {
-//            startSuitWithCom()
-//        } else {
-//            break
-//        }
+        val mySuit = when (input) {
+            "gunting" -> Scissors(StringContainer.scissors)
+            "batu" -> Rock(StringContainer.rock)
+            "kertas" -> Paper(StringContainer.paper)
+            else -> Suit("Error")
+        }
+
+        val result = mySuit.actionAgainst(compSuit)
+        println("Comp: ${compSuit.name}")
+        println("KAMU ${result.status}")
+
+        println("main lagi? (ketik yes jika ingin)")
+        val yes = readLine()
+        if (yes == "yes") {
+            startSuitWithCom()
+        } else {
+            break
+        }
         println(input)
-    } while (input == "gunting" && input == "batu" && input == "kertas")
+    } while (input == "gunting" || input == "batu" || input == "kertas")
 }
 
 private fun startSuit(){
@@ -66,7 +64,6 @@ private fun startSuit(){
             "kertas" -> Paper(StringContainer.paper)
             else -> Suit("nothing else")
         }
-
         if (suit2.name != "nothing else") {
             val resultSuit1 = suit1.actionAgainst(suit2)
             val resultSuit2 = suit2.actionAgainst(suit1)

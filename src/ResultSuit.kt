@@ -1,9 +1,9 @@
 
 class ResultSuit (val status: String){
     companion object {
-        const val WIN: String = "win"
-        const val LOSE: String = "lose"
-        const val DRAW: String = "draw"
-        const val EMPTY: String = ""
+        const val WIN: String = "MENANG !! Selamat!"
+        const val LOSE: String = "KALAH :("
+        const val DRAW: String = "SERI"
+        const val EMPTY: String = "Salah memasukan data, ulang kembali!!"
     }
 }

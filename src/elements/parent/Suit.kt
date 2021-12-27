@@ -8,7 +8,7 @@ open class  Suit (var name: String = "") {
     }
 
     open fun winFrom(): String {
-        return  ""
+        return ""
     }
 
     open fun drawFrom(): String {
